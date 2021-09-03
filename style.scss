@@ -32,6 +32,7 @@ body{
        font-weight: 700;
     }
     .calculator-container{
+ 
         background:$White; 
         padding:1.5rem;
         border-radius:14px;
@@ -66,9 +67,10 @@ body{
                 .tip-group{
                     margin:1.5rem 0;
                     .input-group{
-                      
+                        width: 100%;
                         position:relative;
                         .tip-input{
+                           width: 100%;
                             padding:0.4rem;
                             font-size:24px;
                             padding-left:1.7rem;
@@ -124,6 +126,7 @@ body{
                         color:$Darkgrayishcyan1;
                     }
                     input[type='text']{
+                       
                         width:104px;
                         cursor:text;
                         text-align: center;
@@ -147,6 +150,7 @@ body{
            .tip-amount ,.total{
                display: flex;
                justify-content: space-between;
+               flex-wrap: wrap;
                margin:2rem 0;
            }
            .reset-btn{
@@ -186,4 +190,20 @@ body{
     .calculator-container{
         grid-template-columns: repeat(1,1fr) !important ;
     }
+}
+@media (max-width:480px) {
+    .tip-values{
+                 
+        display: grid;
+        grid-template-columns: repeat(2,1fr) !important;
+    }
+    
+}
+@media (max-width:290px) {
+    .tip-values{
+                 
+        display: grid;
+        grid-template-columns: repeat(1,1fr) !important;
+    }
+    
 }
