@@ -44,7 +44,7 @@ function calcTip(bill,nop,custom){
     resetTheInputs()
     if(custom){
         tipAmount = +((bill/nop)*custom).toFixed(2)
-        
+        resetTheButtons();
     }
     else{
         tipAmount = +((bill/nop)*percentage).toFixed(2)
@@ -80,7 +80,7 @@ form.addEventListener('submit',(e)=>{
         calcTip(+billInput.value,+peopleInput.value,+customInput.value/100)
         
     
-        customInput.value=''
+     
  
     
 
