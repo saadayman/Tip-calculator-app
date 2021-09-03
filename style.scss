@@ -187,6 +187,10 @@ body{
    
 }
 @media (max-width:830px) {
+    body{
+        padding:0 !important;
+    }
+    h1{margin:0 !important;}
     .calculator-container{
         grid-template-columns: repeat(1,1fr) !important ;
     }
