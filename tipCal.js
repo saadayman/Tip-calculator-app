@@ -6,13 +6,12 @@ const billInput=document.getElementById('bill')
 const peopleInput=document.getElementById('people')
 const percentageBtns = document.querySelectorAll('.btn')
 const customInput = document.getElementById('custom')
-let tipAmount;
-let bill;
+let tipAmount
+let bill
 let total
 let numberOfPeople
 let percentage
 chooseThepercentage()
-
 function resetTheButtons(){
     percentageBtns.forEach(btn=>btn.className="btn value-btn")
     percentageBtns[percentageBtns.length-1].className="btn btn-custom"
@@ -21,9 +20,7 @@ function resetTheButtons(){
 function chooseThepercentage(){
     
     percentageBtns.forEach(btn=>{
-      
         btn.addEventListener('click',(e)=>{
-            e.preventDefault()
             if(e.target.classList.contains('value-btn')){
             
                 percentage=e.target.value/100;
@@ -31,14 +28,7 @@ function chooseThepercentage(){
                 e.target.classList.add('active')
             }
          })
-
     })
-  
-    
-    
-
-
-
 }
 function calcTip(bill,nop,custom){
     resetTheInputs()
@@ -58,34 +48,21 @@ function resetTheInputs(){
     tipAmountEl.innerText='$0.00'
     totalEl.innerText="$0.00"
 }
-function showAnswer(tip,total){
 
+function showAnswer(tip,total){
     if(tip||total){
         resetButton.disabled=false
         tipAmountEl.innerText='$'+tip
         totalEl.innerText='$'+total
     }
- 
 }
-
 form.addEventListener('submit',(e)=>{
-  
-    e.preventDefault()
-    
+    e.preventDefault()    
     if(peopleInput.value==="" || peopleInput.value==="0"){
         alert('Number of people cant be zero')
     }
-
-        
         calcTip(+billInput.value,+peopleInput.value,+customInput.value/100)
-        
-    
-     
  
-    
-
- 
-
 })
 resetButton.addEventListener('click',()=>{
     resetTheInputs();
@@ -94,13 +71,5 @@ resetButton.addEventListener('click',()=>{
     billInput.value='';
     peopleInput.value='';
 })
-/*customButton.addEventListener('submit',(e)=>{
-    e.preventDefault()
-    e.target.type='text'
-    e.target.value=''
-    console.log(+e.target.innerText)
 
-    calcTip(+billInput.value,+peopleInput.value)
-    resetTheButtons()
-})*/
 
